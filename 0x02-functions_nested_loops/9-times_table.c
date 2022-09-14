@@ -3,7 +3,9 @@
 /**
  * main - Entry point
  *
- * Description: prints the 9 times table, starting with 0.
+ * times_table - function that prints times table.
+ *
+ * description: prints the 9 times table, starting with 0.
  *
  * Return: no return
  */
