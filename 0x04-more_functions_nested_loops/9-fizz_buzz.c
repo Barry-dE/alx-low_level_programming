@@ -1,9 +1,9 @@
 #include <stdio.h>
-
+#include "main.h"
 
  /**
- * main - prints Buzz each numbers of 3 and 5.
- *
+ * main - prints the numbers from 1 to 100, followed by a new line
+ * but for multiples of three print fizz
  * multiples of both 3 and 5 should print FizzBuzz.
  *
  * Return: 0
@@ -24,6 +24,7 @@ int main(void)
 			printf("Buzz");
 		else
 			printf("%d", i);
+
 		if (i != 100)
 			printf(" ");
 		i++;
