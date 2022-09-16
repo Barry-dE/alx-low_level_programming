@@ -7,17 +7,14 @@
 
 int main(void)
 {
-	long int f, pf;
+	unsigned long int i, n = 612852475143;
 
-	f = 612852475143;
-	for (pf = 2; pf <= f; pf++)
+	for (i = 3; i < 782849; i = i + 2)
 	{
-		if (f % fp == 0)
-		{
-			f /= pf;
-			pf--;
-		}
+		while ((n % i == 0) && (n != i))
+			n = n / i;
 	}
-	printf("%ld\n", pf);
+
+	printf("%ld\n", n);
 	return (0);
 }
