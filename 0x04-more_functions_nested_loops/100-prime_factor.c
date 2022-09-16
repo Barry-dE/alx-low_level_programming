@@ -9,7 +9,7 @@ int main(void)
 {
 	long int f, pf;
 
-	n = 612852475143;
+	f = 612852475143;
 	for (pf = 2; pf <= f; pf++)
 	{
 		if (f % fp == 0)
