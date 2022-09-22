@@ -14,7 +14,7 @@ char *string_toupper(char *w)
 	{
 		if ((*(w + string) >= 97) && (*(w + string) <= 122))
 			*(w + string) = *(w + string) - 32;
-		string++
+		string++;
 	}
 	return (w);
 }
