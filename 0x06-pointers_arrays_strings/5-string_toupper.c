@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *string_toupper - Lowercase string to uppercase.
+ * string_toupper - Lowercase string to uppercase.
  * @w: input string.
  * Return: the pointer to dest.
  */
