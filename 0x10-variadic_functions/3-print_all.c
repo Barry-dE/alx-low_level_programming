@@ -71,32 +71,39 @@ void printf_string(va_list list)
 
 void print_all(const char * const format, ...)
 {
-	const char *ptr;
-	va_list list;
-	funckey key[4] = { {printf_char, 'c'}, {printf_int, 'i'},
-		{printf_float, 'f'}, {printf_string, 's'} };
-	int keyind = 0, notfirst = 0;
+	va_list ar;
+	int i = 0;
+	char form;
+	char *str;
 
-	ptr = format;
-	va_start(list, format);
-	while (format != NULL && *ptr)
+	va_start(ar, format);
+	while (format != NULL && format[i])
 	{
-		if (key[keyind].spec == *ptr)
+		form = format[i];
+		switch (form)
 		{
-			if (notfirst)
-				printf(", ");
-			notfirst = 1;
-			key[keyind].f(list);
-			ptr++;
-			keyind = -1;
+			case 'c':
+				printf("%c", va_arg(ar, int));
+				break;
+			case 'i':
+				printf("%d", va_arg(ar, int));
+				break;
+			case 'f':
+				printf("%f", va_arg(ar, double));
+				break;
+			case 's':
+				str = va_arg(ar, char *);
+				if (str == NULL)
+					str = "(nil)";
+				printf("%s", str);
+				break;
 
 		}
-		keyind++;
-		ptr += keyind / 4;
-		keyind %= 4;
+		if ((form == 'c' || form == 'i' || form == 'f' || form == 's')
+				&& format[i + 1])
+			printf(", ");
+		i++;
 	}
 	printf("\n");
-
-	vai_end(list);
-
+	va_end(ar);
 }
