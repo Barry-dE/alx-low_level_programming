@@ -5,21 +5,20 @@
  * @head: head of a list.
  * @n: n element.
  *
+ * Description: adds a new node at the beginning of linked list
  * Return: address of the new element. NUll if it failed.
  */
 
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *new;
+	listint_t *temp;
 
-	new = malloc(sizeof(listint_t));
-
-	if (new == NULL)
+	temp = malloc(sizeof(listint_t));
+	if (temp == NULL)
 		return (NULL);
 
-	new->n = n;
-	new->next = *head;
-	*head = new;
-
-	return (head);
+	temp->n = n;
+	temp->next = *head;
+	*head = temp;
+	return (temp);
 }
