@@ -1,2 +1,1 @@
-# alx-low_level_programming
-README for project tasks on more pointers.
+#README.md for 0x0B. C - malloc, free
